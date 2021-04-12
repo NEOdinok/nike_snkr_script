@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple ui for script testing</title>
+        <!--what is this "text/javascript" thing for ???-->
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+
+    <body>
+        <!--что такое АТК ???-->
+        <p>АТК на релиз (без размера, кончается на "="):</p>
+        <!--что это за сылка и почему там эти *** ???-->
+        <input id="link" type="text" size="100" placeholder="https://www.nike.com/ru/launch/t/*******/?productId=*******&size="></input>
+
+        <!--почему именно такой формат ввода размеров???-->
+        <p>Интересующие размеры (через запятую с пробелом):</p>
+        <input id="sizes" type="text" size="25" placeholder="8, 10.5, 11, 12"></input>
+
+        <p>Используемые аккаунты:</p>
+        <!--почему каждый раз разные аргументы тим name="comment" и что они делают ???-->
+        <textarea id="accounts" name="comment" cols="50" rows="6" placeholder="login:password"></textarea>
+
+        <p>Адрес получателя</p>
+        <input id="last" type="text" size="25" placeholder="Фамилия"></input>
+        <input id="name" type="text" size="25" placeholder="Имя"></input>
+        <input id="middle" type="text" size="25" placeholder="Отчество"></input>
+        <input id="add1" type="text" size="25" placeholder="Строка адреса 1"></input>
+        <input id="add2" type="text" size="25" placeholder="Строка адреса 2"></input>
+        <input id="city" type="text" size="25" placeholder="Город"></input>
+        <input id="oblast" type="text" size="25" placeholder="Область"></input>
+        <input id="number" type="text" size="25" placeholder="Номер"></input>
+        <input id="email" type="text" size="25" placeholder="Email"></input>
+        <input id="zip" type="text" size="25" placeholder="Индекс"></input>
+
+        <p>Данные оплаты:</p>
+        <input id="cnum" type="text" size="25" placeholder="Номер карты"></input>
+
+        <!--this br is break tag "carriage return"-->
+        <br>
+
+        <input id="cdate" type="text" size="6" placeholder="ММГГ"></input>
+        <input id="cvv" type="text" size="6" placeholder="CVV"></input>
+
+        <p>Время отправки формы:</p>
+        <a>13:59:</a><input type="text" size="2" placeholder="00"></input>
+
+        <h2>Статус задач:</h2>
+        <table border="5">
+            <tr>
+                <td>------- Аккаунт 1 -------</td>
+                <td>------- Аккаунт 2 -------</td>
+                <td>------- Аккаунт 3 -------</td>
+                <td>------- Аккаунт 4 -------</td>
+                <td>------- Аккаунт 5 -------</td>
+            </tr>
+            <tr>
+                <td id="acc1">Готово к запуску</td>
+                <td id="acc2">Готово к запуску</td>
+                <td id="acc3">Готово к запуску</td>
+                <td id="acc4">Готово к запуску</td>
+                <td id="acc5">Готово к запуску</td>
+            </tr>
+        </table> 
+        
+        <br>
+
+        <input type="button" id="nodeGoto" value="TEST"> </input>
+
+        <!--how to start a script in an html document-->
+        <script type="text/javascript">
+            document.getElementById("nodeGoto").addEventListener("click", function() {
+                start(document.getElementById("link").value, document.getElementById("sizes").value, document.getElementById("accounts").value, document.getElementById("name").value, document.getElementById("middle").value, document.getElementById("last").value, document.getElementById("add1").value, document.getElementById("add2").value, document.getElementById("city").value, document.getElementById("zip").value, document.getElementById("email").value, document.getElementById("cnum").value, document.getElementById("cdate").value, document.getElementById("cvv").value);
+            }, false);
+        </script>
+
+    </body>
+</html>
