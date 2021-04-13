@@ -1,4 +1,6 @@
 //what is this index.js file for???
+
+// нужно ли каждый раз комитить package и package lock json???
 const path = require('path');
 const url = require('url');
 
